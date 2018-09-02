@@ -1,23 +1,54 @@
 <html>
 
   <head>
+    <link rel="stylesheet" href="{{ url_for('static' , filename='index.css')}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:900" rel="stylesheet">
   </head>
 
   <body>
-
-    <form action="/submit" method="post">
-      ENTER COMMA SEPARATED VALUES FOR BOTH X-AXIS AND Y-AXIS
+    <h2>ENTER COMMA SEPARATED VALUES FOR BOTH <br> X-AXIS AND Y-AXIS</h2><br>
+    <div><form id="form" action="/submit" method="post" target="my_iframe">
+      
       <br>
-      <input type="text" placeholder="X-AXIS" name="xaxis">
+      <input class="coordinates" type="text" placeholder="X-AXIS" name="xaxis">
       <br>
-      <input type="text" placeholder="Y-AXIS" name="yaxis">
       <br>
-      <input type="radio" name="graph" value="plot" checked>plot<br>
-      <input type="radio" name="graph" value="bargraph">bargraph<br>
-      <input type="radio" name="graph" value="scatter">scatter 
-      <input type="submit">
+      <input class="coordinates" type="text" placeholder="Y-AXIS" name="yaxis">
+      <br>
+      <br>
+      <h3>WHICH PLOT ?</h3>
+      <label><input class="radio" type="radio" name="graph" value="plot" checked>LINEPLOT</label><br>
+      <label><input class="radio" type="radio" name="graph" value="bargraph">BARGRAPH</label><br>
+      <label><input class="radio" type="radio" name="graph" value="scatter">SCATTERPLOT</label> <br><br>
+      <input type="submit" onclick="ifram()">
     </form>
+    <iframe id="img" scrolling="no" name="my_iframe" style="width: 55%;height: 80%;border:0;overflow:hidden"></iframe></div>
 
   </body>
-
+  <script>
+    function ifram(){
+      if(window.innerWidth>700){
+        a=document.getElementById("img");
+        a.style.display="block";
+        a.style.border="2px;"
+        b=document.getElementById("form");
+        b.style.margin="0";
+      }  
+      else{
+        a=document.getElementById("img");
+        a.style.display="block";
+        a.style.border="2px;"
+        a.style.width='100%'
+        a.scrolling='yes'
+        a.style.overflow='auto'
+        b=document.getElementById("form");
+        b.style.marginLeft='28%';
+      }
+    }
+  </script>
 </html>
+
+
+
+

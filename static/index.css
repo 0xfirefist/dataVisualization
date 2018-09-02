@@ -1,0 +1,51 @@
+body{
+    background-color: black;
+    color:white;
+    font-family: 'Playfair Display', serif;
+
+}
+div{
+	display: flex;
+	flex-wrap: wrap;
+}
+form{
+	margin-left:28%;
+	width: 44%;
+	text-align: center;
+}
+.coordinates{
+    border-radius: 5px;
+    height: 70px;
+    width: 95%;
+    font-size: 1.2em;
+	margin: auto;
+	
+}
+.coordinates::placeholder{
+	margin:auto;
+	text-align: center;
+}
+label{
+	font-size: 20px;
+}
+h2{
+	margin : auto;
+	text-align: center;
+    font-size: 22px;
+}
+h3{
+	margin:0;
+}
+iframe{
+	display: none;
+}
+input[type="submit"]{
+	width: 100px;
+	border-radius: 7px;
+}
+@media only screen and (max-width:700px){
+	div{
+		flex-direction:column;
+		justify-content: center;
+	}
+}
