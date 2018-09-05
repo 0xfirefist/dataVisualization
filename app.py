@@ -41,8 +41,6 @@ def visualize():
 
 	plt.xlabel('X AXIS')
 	plt.ylabel('Y AXIS')
-	plt.xticks(range(0,int(max(x)+2)))
-	plt.yticks(range(0,int(max(y)+2)))
 	plt.grid(True)	
 		
 
